@@ -1,0 +1,219 @@
+/*
+-------------------------------------------------------------------------
+<=============================   imports  ==============================>
+-------------------------------------------------------------------------
+*/
+
+@import './variables.scss';
+@import './responsive.scss';
+
+// components
+
+@import '../../components/Components';
+
+/*
+-------------------------------------------------------------------------
+<=============== for tailwind css styles configs   =====================>
+-------------------------------------------------------------------------
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .flex {
+    @extend .flex;
+    flex-wrap: wrap;
+  }
+  :root {
+    --primary: #e0daf0;
+    --secondary: #775aca;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--primary);
+  }
+  
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+    border-radius: 5px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 14px;
+  }
+  
+}
+
+/*
+-------------------------------------------------------------------------
+<==============   fonts and common font styles  ========================>
+-------------------------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.t-input {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0;
+}
+
+/*  button text */
+
+.t-button {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+}
+
+/*
+-------------------------------------------------------------------------
+<==============   colors and common color styles  ========================>
+-------------------------------------------------------------------------
+*/
+
+.purpleBg {
+  background-color: $purple;
+}
+
+.purpleCol {
+  color: $purple;
+}
+
+.yellowBg {
+  background-color: $yellow;
+}
+
+.yellowCol {
+  color: $yellow;
+}
+
+.lightYellowBg {
+  background-color: $lightYellow;
+}
+
+.lightYellowCol {
+  color: $lightYellow;
+}
+
+.whiteBg {
+  background-color: $white;
+}
+
+.whiteCol {
+  color: $white;
+}
+
+.blackBg {
+  background-color: $black;
+}
+
+.blackCol {
+  color: $black;
+}
+
+/*
+-------------------------------------------------------------------------
+<========================   for global styles  ========================>
+-------------------------------------------------------------------------
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  background-color: $white;
+  color: $black;
+}
+
+.cw {
+  width: 1055px;
+}
+
+section {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.rips:active {
+  filter: brightness(0.8);
+}
+
+.btn-t-1 {
+  background-color: $yellow !important;
+  color: $black !important;
+}
+.btn-t-2 {
+  background-color: $purple !important;
+  color: $white !important;
+}
+.btn-t-3 {
+  background-color: $yellow !important;
+  color: $black !important;
+  width: 100%;
+}
+
+button {
+  @extend .t-button;
+  text-transform: none !important;
+}
+
+// tabs
+
+.tabCont {
+  .MuiTabs-root {
+    width: 100%;
+    .MuiTabs-flexContainer {
+      justify-content: center;
+      button {
+        border-radius: 3px;
+        margin: 2px;
+        @extend .t-button;
+        color: $black;
+        border: 1px solid $purple;
+        padding: 10px 20px;
+        &.Mui-selected {
+          background-color: $purple;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .tableBody {
+    width: 100%;
+
+    .MuiTabPanel-root {
+      padding: 0;
+    }
+  }
+
+  // removals
+  .MuiTabs-indicator {
+    display: none;
+  }
+}
+
+
